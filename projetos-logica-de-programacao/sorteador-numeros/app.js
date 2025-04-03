@@ -14,6 +14,7 @@ function sortear() {
         }
 
         sorteados.push(numero)
+        ativarBotaoReiniciar()
     }
 
     let resultado = document.getElementById('resultado')
@@ -23,4 +24,12 @@ function sortear() {
 
 function obterNumeroAleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function ativarBotaoReiniciar() {
+    let botao = document.getElementById('btn-reiniciar')
+    if(botao.classList.contains('container__botao-desabilitado')) {
+        botao.classList.remove('container__botao-desabilitado')
+        botao.classList.add('container__botao')
+    }
 }
